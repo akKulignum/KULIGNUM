@@ -1,3 +1,5 @@
+import { withBase } from './site';
+
 export type Service = {
   slug: string;
   title: string;
@@ -15,8 +17,8 @@ export const services: Service[] = [
     navLabel: 'Holzbau',
     description:
       'Im Holzbau bzw. der Zimmerei stellen und reparieren wir Holzaußenwände, Holzinnenwände, Anbauten, Holzfassaden und mehr.',
-    heroImage: '/images/holzbau.svg',
-    cardImage: '/images/holzbau.svg',
+    heroImage: withBase('/images/holzbau.svg'),
+    cardImage: withBase('/images/holzbau.svg'),
     body: [
       'Geht es um Holzbau bzw. Zimmerei, ist egal, ob neues Projekt, Ausbau oder Reparatur bestehender Substanz, wir planen mit Ihnen die optimale Lösung. Dabei bieten wir von Konzept bis Montage alles aus einer Hand.',
       'Im Holzbau vereinen wir die Expertise des traditionellen Zimmererhandwerks mit modernsten Methoden. Wir stellen Holzaußenwände und Holzinnenwände her, übernehmen Innenausbauten mit Holzständerwänden und Trockenbauwänden. Anbauten wie Gebäudeerweiterungen werden komplett vor Ort als Holzrahmenbau oder in Kombination mit den oben genannten Herstellungspunkten erstellt.',
@@ -29,8 +31,8 @@ export const services: Service[] = [
     navLabel: 'Dach',
     description:
       'Brauchen Sie Überdachungen oder Dachfenster? Dann brauchen Sie jemanden, der sich für Sie aufs Dach traut.',
-    heroImage: '/images/dach.svg',
-    cardImage: '/images/dach.svg',
+    heroImage: withBase('/images/dach.svg'),
+    cardImage: withBase('/images/dach.svg'),
     body: [
       'Brauchen Sie Überdachungen oder Dachfenster? Dann brauchen Sie jemanden der sich für Sie aufs Dach traut. Mit einem langlebigen und modern gedämmtem Dach sind Sie für die Zukunft gewappnet. Wir montieren und reparieren Dachfenster, Überdachungen, Dachgauben und mehr. So setzen wir Ihrem Bau die Krone auf.',
       'Wir stellen Dachstühle und Gauben auf, planen und binden sie ab. Für trockene und wohltemperierte vier Wände, decken und dämmen wir – nach EnEV / LBO.',
@@ -44,8 +46,8 @@ export const services: Service[] = [
     navLabel: 'Balkone',
     description:
       'Wir bauen und reparieren Holzbalkon, Balkongeländer, Balkonverkleidung aus Holz und mehr.',
-    heroImage: '/images/balkon.svg',
-    cardImage: '/images/balkon.svg',
+    heroImage: withBase('/images/balkon.svg'),
+    cardImage: withBase('/images/balkon.svg'),
     body: [
       'Wir bauen und reparieren Holzbalkon, Balkongeländer, Balkonverkleidung aus Holz und mehr.',
       'Beim Kurzurlaub auf dem Holzbalkon kann man durchatmen und die Aussicht genießen. Er sollte auch ein schönes Ambiente bieten, damit die kurze Pause oder der Abend an der frischen Luft die gewünschte Entspannung bringen. Dazu ist ein Holzbalkon mit seiner gemütlichen Ausstrahlung und starkem Charakter perfekt geeignet.',
@@ -59,8 +61,8 @@ export const services: Service[] = [
     navLabel: 'Terrassen',
     description:
       'Wir bauen und reparieren Terrassenüberdachungen, Terrassen, Holzterrassen und mehr.',
-    heroImage: '/images/terrasse.svg',
-    cardImage: '/images/terrasse.svg',
+    heroImage: withBase('/images/terrasse.svg'),
+    cardImage: withBase('/images/terrasse.svg'),
     body: [
       'Wir bauen und reparieren Terrassenüberdachungen, Terrassen, Holzterrassen und mehr.',
       'Terrassen verbinden Haus und Garten harmonisch miteinander. Die passende Terrassenüberdachung hält diese trocken. Sie bringen uns so der Natur näher und ermöglichen durch den befestigten Untergrund die Möblierung des Gartens. Ob ebenerdig, erhöht oder ihr Haus umlaufend, wir helfen Ihnen die passende Terrasse zu planen und setzen sie um. Dabei achten wir auf ein mit der Architektur ihres Hauses und ihrem Grundstück harmonisierendes Ergebnis. Damit Sie gemütliche Stunden draußen verbringen können.',
@@ -73,8 +75,8 @@ export const services: Service[] = [
     title: 'Carports, Pergolen aus Holz und mehr',
     navLabel: 'Carports',
     description: 'Wir bauen und reparieren Carports, Pergolen aus Holz und mehr.',
-    heroImage: '/images/carport.svg',
-    cardImage: '/images/carport.svg',
+    heroImage: withBase('/images/carport.svg'),
+    cardImage: withBase('/images/carport.svg'),
     body: [
       'Wir bauen und reparieren Carports, Pergolen aus Holz und mehr.',
       'Carport oder Garage? Ein Carport spart Ihnen Zeit. Die Genehmigung eines Carports bekommt man meist viel einfacher und schneller als die einer Garage. Dazu bietet ein Carport den besten Schutz für Ihr Fahrzeug. Sonne und Nässe werden ferngehalten und das ohne den Muff einer Garage. Auch optisch ergänzt ein Carport aus Holz Ihr Fahrzeug sowie Haus vorteilhaft. Das Gleiche gilt für eine Pergola. Die Lösung für Überdachungen zum darunter Sitzen oder um Gegenstände trocken darunter abzustellen.',
