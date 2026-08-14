@@ -7,14 +7,14 @@ import { services } from '@/data/services';
     <div class="grid grid--3">
       <div>
         <h3>Links</h3>
-        <a href={withBase('')}>Home</a>
-        <a href={withBase('kontakt/')}>Kontakt</a>
-        <a href={withBase('datenschutz/')}>Datenschutz</a>
-        <a href={withBase('impressum/')}>Impressum</a>
+        <a href={withBase('/')}>Home</a>
+        <a href={withBase('/kontakt/')}>Kontakt</a>
+        <a href={withBase('/datenschutz/')}>Datenschutz</a>
+        <a href={withBase('/impressum/')}>Impressum</a>
       </div>
       <div>
         <h3>Bereiche</h3>
-        {services.map((service) => <a href={withBase(`service/${service.slug}/`)}>{service.navLabel}</a>)}
+        {services.map((service) => <a href={withBase(`/service/${service.slug}/`)}>{service.navLabel}</a>)}
       </div>
       <div>
         <h3>Kontakt</h3>
