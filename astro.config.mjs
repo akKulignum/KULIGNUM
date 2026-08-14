@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://akkulignum.github.io',
-  base: '/KULIGNUM/',
+  site: 'https://www.kulignum.de',
+  base: '/',
 });
