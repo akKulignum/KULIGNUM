@@ -129,9 +129,30 @@ p { margin: 0 0 18px; }
 .contact-card { background: white; padding: 26px; border-radius: var(--radius); box-shadow: var(--shadow); }
 .form { display: grid; gap: 16px; }
 .form label { display: grid; gap: 8px; font-weight: 800; }
-.form input, .form textarea { width: 100%; border: 1px solid rgba(88,54,31,.22); border-radius: 14px; padding: 14px 16px; font: inherit; background: white; }
+.form input, .form textarea { 
+  width: 100%; 
+  border: 1.5px solid rgba(88,54,31,.22); 
+  border-radius: 14px; 
+  padding: 14px 16px; 
+  font: inherit; 
+  background: white;
+  transition: all 0.2s ease;
+  color: var(--color-text);
+}
+.form input::placeholder, .form textarea::placeholder { color: var(--color-muted); opacity: 0.7; }
+.form input:focus, .form textarea:focus { 
+  outline: none;
+  border-color: var(--color-wood-500);
+  box-shadow: 0 0 0 3px rgba(164, 106, 53, 0.1);
+  background: white;
+}
+.form input:hover, .form textarea:hover { border-color: rgba(88,54,31,.35); }
 .form textarea { min-height: 150px; resize: vertical; }
 .form .checkbox { display: flex; align-items: flex-start; gap: 10px; font-weight: 600; color: var(--color-muted); }
+.form .checkbox input[type="checkbox"] { margin-top: 4px; cursor: pointer; width: 20px; height: 20px; accent-color: var(--color-wood-500); }
+.form .checkbox span { line-height: 1.5; }
+.form .checkbox a { color: var(--color-wood-500); text-decoration: underline; }
+.form button { margin-top: 8px; }
 .map-placeholder { border-radius: var(--radius); min-height: 320px; display: grid; place-items: center; text-align: center; padding: 28px; background: linear-gradient(135deg, var(--color-sand), #fff); border: 1px dashed rgba(88,54,31,.3); }
 
 .footer { background: var(--color-wood-900); color: #f5e8d5; padding: 64px 0 24px; }
@@ -154,4 +175,5 @@ p { margin: 0 0 18px; }
   .feature-list { grid-template-columns: 1fr; }
   .header__inner { min-height: 72px; }
   .logo { font-size: 0.95rem; }
+  .form input, .form textarea { padding: 12px 14px; font-size: 16px; }
 }

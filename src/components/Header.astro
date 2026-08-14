@@ -19,9 +19,12 @@ const currentPath = Astro.url.pathname;
     </a>
     <button class="nav-toggle" aria-label="Navigation öffnen" aria-expanded="false" type="button">Menü</button>
     <nav class="nav" aria-label="Hauptnavigation">
-      {site.nav.map((item) => (
-        <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>{item.label}</a>
-      ))}
+      {site.nav.map((item) => {
+        const isActive = currentPath === item.href || (currentPath === '/' && item.href === '/');
+        return (
+          <a href={item.href} aria-current={isActive ? 'page' : undefined}>{item.label}</a>
+        );
+      })}
     </nav>
   </div>
 </header>
