@@ -19,14 +19,22 @@ import { site } from '@/data/site';
       <article class="content">
         <span class="eyebrow">Anfrage</span>
         <h2>Schreiben Sie uns</h2>
-        <form class="form" method="post" action="#">
-          <!-- TODO: Backend-Endpoint, Netlify Forms oder Formspree ergänzen. -->
-          <label>Name<input required name="name" autocomplete="name" /></label>
-          <label>E-Mail<input required type="email" name="email" autocomplete="email" /></label>
-          <label>Telefon optional<input name="phone" autocomplete="tel" /></label>
-          <label>Nachricht<textarea required name="message"></textarea></label>
-          <label class="checkbox"><input required type="checkbox" name="privacy" /> <span>Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Angaben zur Kontaktaufnahme zu.</span></label>
-          <button class="btn" type="submit">Absenden</button>
+        <form class="form" name="kontakt" method="post" action="/success/" netlify-honeypot="bot-field" netlify>
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="form-name" value="kontakt" />
+          
+          <label>Name<input required name="name" type="text" autocomplete="name" /></label>
+          <label>E-Mail<input required name="email" type="email" autocomplete="email" /></label>
+          <label>Telefon <span style="color: var(--color-muted);">(optional)</span><input name="phone" type="tel" autocomplete="tel" /></label>
+          <label>Betreff <span style="color: var(--color-muted);">(optional)</span><input name="subject" type="text" placeholder="z.B. Anfrage zu Holzbau" /></label>
+          <label>Nachricht<textarea required name="message" placeholder="Erzählen Sie uns von Ihrem Projekt..."></textarea></label>
+          
+          <label class="checkbox">
+            <input required name="privacy" type="checkbox" />
+            <span>Ich habe die <a href="/datenschutz/">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zu.</span>
+          </label>
+          
+          <button class="btn" type="submit">Nachricht absenden</button>
         </form>
       </article>
       <aside class="map-placeholder">
