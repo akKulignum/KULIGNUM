@@ -1,0 +1,13 @@
+---
+import PageHero from './PageHero.astro';
+interface Props { title: string; }
+const { title } = Astro.props;
+---
+<PageHero title={title} description="Diese Seite ist als rechtlicher Platzhalter angelegt und sollte vor Veröffentlichung juristisch geprüft werden." eyebrow={title} />
+<section class="section">
+  <div class="container content">
+    <h2>{title}</h2>
+    <p>Bitte ergänzen Sie hier die rechtlich geprüften Inhalte.</p>
+    <p>Dieser Platzhalter dient nur der technischen Struktur des Rebuilds.</p>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+---
+import { site } from '@/data/site';
+interface Props { title?: string; text?: string; }
+const { title = 'Jetzt Angebot einholen!', text = 'Suchen Sie eine Zimmerei im Rhein-Neckar-Raum?' } = Astro.props;
+---
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta">
+      <div>
+        <span class="eyebrow">Kontakt</span>
+        <h2>{title}</h2>
+        <p>{text}</p>
+        <a class="cta__phone" href={`tel:${site.phoneCompact.replaceAll(' ', '')}`}>{site.phone}</a>
+      </div>
+      <a class="btn" href="/kontakt/">Kontakt</a>
+    </div>
+  </div>
+</section>

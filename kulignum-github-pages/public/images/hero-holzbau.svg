@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Holzbau Hintergrund">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#4b2f1c"/><stop offset="1" stop-color="#d3a265"/></linearGradient>
+    <pattern id="grain" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M0 30 C20 10 55 10 80 28 M0 58 C28 38 54 46 80 62" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="4"/></pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#g)"/>
+  <rect width="1600" height="1000" fill="url(#grain)" opacity=".55"/>
+  <path d="M100 720 L740 250 L1500 720" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="48" stroke-linecap="round"/>
+  <path d="M280 760 H1320" stroke="rgba(36,22,14,.45)" stroke-width="90" stroke-linecap="round"/>
+</svg>

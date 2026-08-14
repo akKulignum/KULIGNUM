@@ -1,0 +1,41 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/PageHero.astro';
+import { site } from '@/data/site';
+---
+<BaseLayout title="Kontakt | Kulignum Holzbau" description="Kontakt zu Kulignum Holzbau in Altlußheim: Telefon, E-Mail, Adresse und Anfrageformular.">
+  <PageHero title="Kontakt" description="Was können wir für Sie tun?" eyebrow="Kontakt" />
+  <section class="section">
+    <div class="container">
+      <div class="contact-cards">
+        <article class="contact-card"><h3>Adresse</h3><p>{site.address}</p><p>{site.addressNote}</p></article>
+        <article class="contact-card"><h3>Telefon</h3><p><a href={`tel:${site.phoneCompact.replaceAll(' ', '')}`}>{site.phone}</a></p></article>
+        <article class="contact-card"><h3>E-Mail</h3><p><a href={`mailto:${site.email}`}>{site.email}</a></p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section section--tight">
+    <div class="container grid grid--2">
+      <article class="content">
+        <span class="eyebrow">Anfrage</span>
+        <h2>Schreiben Sie uns</h2>
+        <form class="form" method="post" action="#">
+          <!-- TODO: Backend-Endpoint, Netlify Forms oder Formspree ergänzen. -->
+          <label>Name<input required name="name" autocomplete="name" /></label>
+          <label>E-Mail<input required type="email" name="email" autocomplete="email" /></label>
+          <label>Telefon optional<input name="phone" autocomplete="tel" /></label>
+          <label>Nachricht<textarea required name="message"></textarea></label>
+          <label class="checkbox"><input required type="checkbox" name="privacy" /> <span>Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Angaben zur Kontaktaufnahme zu.</span></label>
+          <button class="btn" type="submit">Absenden</button>
+        </form>
+      </article>
+      <aside class="map-placeholder">
+        <div>
+          <h3>Karte anzeigen</h3>
+          <p>Aus Datenschutzgründen wird die Karte erst nach Ihrer Zustimmung geladen.</p>
+          <button class="btn btn--ghost" type="button">Karte anzeigen</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

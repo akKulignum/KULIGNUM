@@ -1,0 +1,18 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ServicePage from '@/components/ServicePage.astro';
+import { services, getServiceBySlug } from '@/data/services';
+
+export function getStaticPaths() {
+  return services.map((service) => ({ params: { slug: service.slug } }));
+}
+
+const { slug } = Astro.params;
+const service = getServiceBySlug(slug ?? '');
+if (!service) {
+  return Astro.redirect('/');
+}
+---
+<BaseLayout title={`${service.title} | Kulignum Holzbau`} description={service.description} image={service.heroImage}>
+  <ServicePage service={service} />
+</BaseLayout>
