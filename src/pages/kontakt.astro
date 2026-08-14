@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PageHero from '@/components/PageHero.astro';
-import { site } from '@/data/site';
+import { site, withBase } from '@/data/site';
 ---
 <BaseLayout title="Kontakt | Kulignum Holzbau" description="Kontakt zu Kulignum Holzbau in Altlußheim: Telefon, E-Mail, Adresse und Anfrageformular.">
   <PageHero title="Kontakt" description="Was können wir für Sie tun?" eyebrow="Kontakt" />
@@ -19,7 +19,7 @@ import { site } from '@/data/site';
       <article class="content">
         <span class="eyebrow">Anfrage</span>
         <h2>Schreiben Sie uns</h2>
-        <form class="form" name="kontakt" method="post" action="/success/" netlify-honeypot="bot-field" netlify>
+        <form class="form" name="kontakt" method="post" action={withBase('success/')} netlify-honeypot="bot-field" netlify>
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="kontakt" />
           
@@ -31,7 +31,7 @@ import { site } from '@/data/site';
           
           <label class="checkbox">
             <input required name="privacy" type="checkbox" />
-            <span>Ich habe die <a href="/datenschutz/">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zu.</span>
+            <span>Ich habe die <a href={withBase('datenschutz/')}>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zu.</span>
           </label>
           
           <button class="btn" type="submit">Nachricht absenden</button>
