@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PageHero from '@/components/PageHero.astro';
-import { site } from '@/data/site';
+import { site, withBase } from '@/data/site';
 ---
 <BaseLayout title="Nachricht versendet | Kulignum Holzbau" description="Ihre Nachricht wurde erfolgreich übermittelt.">
   <PageHero title="Vielen Dank!" description="Ihre Nachricht wurde erfolgreich übermittelt." eyebrow="Erfolg" />
@@ -21,7 +21,7 @@ import { site } from '@/data/site';
         </div>
         
         <div style="margin-top: 42px;">
-          <a class="btn" href="/">Zur Startseite</a>
+          <a class="btn" href={withBase('')}>Zur Startseite</a>
         </div>
       </div>
     </div>

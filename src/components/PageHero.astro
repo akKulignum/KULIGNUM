@@ -1,10 +1,11 @@
 ---
+import { withBase } from '@/data/site';
 interface Props { title: string; description?: string; image?: string; eyebrow?: string; }
 const { title, description, image = '/images/hero-holzbau.svg', eyebrow = 'Kulignum Holzbau' } = Astro.props;
 ---
 <section class="page-hero" style={`--hero-image: url('${image}')`}>
   <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a> / {eyebrow}</div>
+    <div class="breadcrumb"><a href={withBase('')}>Home</a> / {eyebrow}</div>
     <h1>{title}</h1>
     {description && <p class="lead">{description}</p>}
   </div>

@@ -1,5 +1,5 @@
 ---
-import { site } from '@/data/site';
+import { site, withBase } from '@/data/site';
 const currentPath = Astro.url.pathname;
 ---
 <div class="topbar">
@@ -13,14 +13,14 @@ const currentPath = Astro.url.pathname;
 </div>
 <header class="site-header">
   <div class="container header__inner">
-    <a class="logo" href="/" aria-label="Kulignum Holzbau Startseite">
+    <a class="logo" href={withBase('')} aria-label="Kulignum Holzbau Startseite">
       {site.shortName}
       <span>{site.claim}</span>
     </a>
     <button class="nav-toggle" aria-label="Navigation öffnen" aria-expanded="false" type="button">Menü</button>
     <nav class="nav" aria-label="Hauptnavigation">
       {site.nav.map((item) => {
-        const isActive = currentPath === item.href || (currentPath === '/' && item.href === '/');
+        const isActive = currentPath === item.href || (currentPath === withBase('') && item.href === withBase(''));
         return (
           <a href={item.href} aria-current={isActive ? 'page' : undefined}>{item.label}</a>
         );
