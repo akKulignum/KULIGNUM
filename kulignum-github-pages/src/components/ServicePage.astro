@@ -1,0 +1,71 @@
+---
+import type { Service } from '@/data/services';
+import { site } from '@/data/site';
+import PageHero from './PageHero.astro';
+import CTA from './CTA.astro';
+
+interface Props { service: Service; }
+const { service } = Astro.props;
+const inclusive = ['Planung (CAD-gestützt)', 'Erstellung von Werkplänen', 'Materialbeschaffung und -lieferung', 'Qualitätskontrolle', 'Beratung'];
+---
+<PageHero title={service.title} description={service.description} image={service.heroImage} eyebrow={service.navLabel} />
+
+<section class="section">
+  <div class="container grid grid--2">
+    <article class="content">
+      <span class="eyebrow">{service.navLabel}</span>
+      <h2>{service.title}</h2>
+      {service.body.map((paragraph) => <p>{paragraph}</p>)}
+      <div class="gallery" aria-label="Projektbilder">
+        <div></div><div></div><div></div>
+      </div>
+    </article>
+    <aside class="aside-box">
+      <h3>Direkt beraten lassen</h3>
+      <p>Wir besprechen Ihr Vorhaben persönlich und finden eine passende Lösung.</p>
+      <p><strong>Telefon:</strong><br /><a href={`tel:${site.phoneCompact.replaceAll(' ', '')}`}>{site.phone}</a></p>
+      <p><strong>E-Mail:</strong><br /><a href={`mailto:${site.email}`}>{site.email}</a></p>
+      <a class="btn" href="/kontakt/">Kontakt aufnehmen</a>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container grid grid--2">
+    <article class="content">
+      <span class="eyebrow">Der Meister</span>
+      <h2>Sebastian Kunze</h2>
+      <p>Ich dachte früher, ich müsse studieren, um einen erfüllenden Beruf zu finden.</p>
+      <p>Als ich in einem Praktikum zum ersten Mal mit Holz arbeitete, änderte sich das. Mit meinen Händen, echte Werke schaffen, das ist mein Weg. Die schöpferische Arbeit als Zimmerer.</p>
+      <p>Bau und Planung fordern einen körperlich und geistig. Das weckte die Leidenschaft zum Handwerk in mir. Welche mich nach der Ausbildung und Gesellentätigkeit bis zum Erwerb des Meisters führte. Mit der Gründung von Kulignum verwirklichte ich meinen Traum der eigenen Zimmerei. Heute freue ich mich darauf Ihre Projekte anzupacken. Sie in fühlbare, bestaunbare Werke mit Bestand zu verwandeln.</p>
+      <p><strong>Ihr Zimmerermeister<br />Sebastian Kunze</strong></p>
+    </article>
+    <div class="card">
+      <div class="card__image" style="min-height: 100%; background-image: linear-gradient(135deg, var(--color-wood-700), var(--color-wood-300));"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid grid--2">
+    <article class="content">
+      <span class="eyebrow">Inklusive</span>
+      <h2>Alles aus einer Hand</h2>
+      <ul class="inclusive">
+        {inclusive.map((item) => <li>{item}</li>)}
+      </ul>
+    </article>
+    <div class="grid">
+      <article class="aside-box">
+        <h3>Normgerecht</h3>
+        <p>EnEV (Energie-Einspar-Verordnung), DIN, LBO (Landesbauordnung), VOB (Vergabe- und Vertragsordnung für Bauleistungen), STLB-Bau</p>
+      </article>
+      <article class="aside-box">
+        <h3>Individuell</h3>
+        <p>Jedes Projekt birgt andere Herausforderungen. Wir machen uns ein Bild und finden die optimale Lösung für Ihr Anliegen.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<CTA title="Jetzt kostenlos beraten lassen!" />

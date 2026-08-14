@@ -1,0 +1,70 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+import CTA from '@/components/CTA.astro';
+import { services } from '@/data/services';
+import { site } from '@/data/site';
+
+const keywords = [
+  'Holzaußenwände', 'Holzinnenwände', 'Holzständerwände', 'Anbauten', 'Holzfassaden',
+  'Dachfenster', 'Dachstühle', 'Überdachungen', 'Dämmung', 'Dachgauben', 'Holzbalkone',
+  'Balkongeländer Holz', 'Balkonverkleidung Holz', 'Terrassen', 'Terrassenüberdachung',
+  'Terrassendach', 'Holzterrassen', 'Carports', 'Pergolen', 'und mehr'
+];
+const features = ['Meisterqualität', 'Zertifizierte Materialien', 'Kreative Bauideen', 'Neueste Technik', 'Präzise Angebote', 'Ausgewählte Zulieferer', 'Offen und ehrlich', 'Zuverlässig und schnell'];
+---
+<BaseLayout title="Kulignum Holzbau | Zimmerei Meisterbetrieb aus Altlußheim" description="Kulignum Holzbau ist Ihr Zimmerei Meisterbetrieb für Holzbau, Dach, Balkone, Terrassen, Carports und Pergolen im Rhein-Neckar-Raum.">
+  <section class="hero">
+    <div class="container hero__content">
+      <span class="eyebrow">{site.claim}</span>
+      <h1>Willkommen bei Kulignum Holzbau</h1>
+      <p class="lead">Ihrem Zimmerei Meisterbetrieb für Zimmereiarbeiten rund ums Holz am Haus. Holzbau, Dach, Balkone, Carports, Pergolen und Terrassen in Meisterqualität.</p>
+      <div class="hero__actions">
+        <a class="btn" href="/kontakt/">Kontakt</a>
+        <a class="btn btn--ghost" href={`tel:${site.phoneCompact.replaceAll(' ', '')}`}>{site.phone}</a>
+      </div>
+      <p class="hero__note">Wir holen für Sie alles aus dem besten Werkstoff der Welt.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid--2">
+      <div>
+        <span class="eyebrow">Wir sind Kulignum Holzbau</span>
+        <h2>Der Zimmerei Meisterbetrieb aus Altlußheim</h2>
+      </div>
+      <div>
+        <p class="lead">Mit dem Know-how des traditionellen Zimmererhandwerks und modernsten Methoden holen wir Alles aus dem besten Werkstoff der Welt.</p>
+        <div class="keywords">
+          {keywords.map((keyword) => <span class="keyword">{keyword}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-sand);">
+    <div class="container">
+      <span class="eyebrow">Wir machen</span>
+      <h2>Unsere Arbeitsbereiche</h2>
+      <p class="lead">Holz vereint Nachhaltigkeit, Stabilität und Schönheit. Wir packen es für Sie an bei:</p>
+      <div class="grid service-grid" style="margin-top: 34px;">
+        {services.map((service) => <ServiceCard service={service} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid--2">
+      <div>
+        <span class="eyebrow">Warum Kulignum Holzbau</span>
+        <h2>Damit Ihre Entscheidung im Rückblick die richtige war.</h2>
+        <p class="lead">Wir verbinden saubere Planung, traditionelles Zimmererhandwerk und moderne Technik.</p>
+      </div>
+      <ul class="feature-list">
+        {features.map((feature) => <li>{feature}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

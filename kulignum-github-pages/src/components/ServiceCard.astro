@@ -1,0 +1,17 @@
+---
+import type { Service } from '@/data/services';
+interface Props { service: Service; }
+const { service } = Astro.props;
+---
+<article class="card">
+  <a href={`/service/${service.slug}/`}>
+    <div class="card__image" aria-hidden="true">
+      <img src={service.cardImage} alt="" loading="lazy" onerror="this.style.display='none'" />
+    </div>
+    <div class="card__body">
+      <h3>{service.title}</h3>
+      <p>{service.description}</p>
+      <strong>Mehr erfahren →</strong>
+    </div>
+  </a>
+</article>

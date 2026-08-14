@@ -1,0 +1,29 @@
+---
+import { site } from '@/data/site';
+import { services } from '@/data/services';
+---
+<footer class="footer">
+  <div class="container">
+    <div class="grid grid--3">
+      <div>
+        <h3>Links</h3>
+        <a href="/">Home</a>
+        <a href="/kontakt/">Kontakt</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/impressum/">Impressum</a>
+      </div>
+      <div>
+        <h3>Bereiche</h3>
+        {services.map((service) => <a href={`/service/${service.slug}/`}>{service.navLabel}</a>)}
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <a href={`tel:${site.phoneCompact.replaceAll(' ', '')}`}>{site.phone}</a>
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+        <p>{site.address}</p>
+        <p>{site.addressNote}</p>
+      </div>
+    </div>
+    <div class="footer__bottom">{site.copyright}</div>
+  </div>
+</footer>

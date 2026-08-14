@@ -1,0 +1,36 @@
+---
+import { site } from '@/data/site';
+const currentPath = Astro.url.pathname;
+---
+<div class="topbar">
+  <div class="container topbar__inner">
+    <span>{site.address}</span>
+    <div class="topbar__items">
+      <a href={`tel:${site.phoneCompact.replaceAll(' ', '')}`}>{site.phone}</a>
+      <span>{site.openingHours}</span>
+    </div>
+  </div>
+</div>
+<header class="site-header">
+  <div class="container header__inner">
+    <a class="logo" href="/" aria-label="Kulignum Holzbau Startseite">
+      {site.shortName}
+      <span>{site.claim}</span>
+    </a>
+    <button class="nav-toggle" aria-label="Navigation öffnen" aria-expanded="false" type="button">Menü</button>
+    <nav class="nav" aria-label="Hauptnavigation">
+      {site.nav.map((item) => (
+        <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>{item.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>
+<script>
+  const button = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
+  button?.addEventListener('click', () => {
+    const isOpen = nav?.getAttribute('data-open') === 'true';
+    nav?.setAttribute('data-open', String(!isOpen));
+    button.setAttribute('aria-expanded', String(!isOpen));
+  });
+</script>
